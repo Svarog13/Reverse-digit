@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+        /*Користувач вводить з клавіатури число більше за нуль,
+        необхідно вивести всі його цифри, починаючи з кінця.
+        Примітка.Наприклад, користувач ввів число 12345.
+        На екрані має з, явитися число, записане навпаки —
+        54321.*/
+    int digit;
+    cout << "Enter the digit: " << endl;
+    cin >> digit;
+    if (digit<=0)
+    {
+        cout << "Error, enter another digit!" << endl;
+    }
+    else if (digit>=0)
+    {
+        if (digit>=10000 && digit <= 99999)
+        {
+            int a = digit / 10000;
+            int b = (digit / 1000) % 10;
+            int c = (digit / 100) % 10;
+            int d = (digit / 10) % 10;
+            int e = digit % 10;
+            cout << e << d << c << b << a;
+        }
+        else if (digit >= 1000 && digit <= 9999)
+        {
+            int a = (digit / 1000) % 10;
+            int b = (digit / 100) % 10;
+            int c = (digit / 10) % 10;
+            int d = digit % 10;
+            cout << d << c << b << a;
+        }
+        else if (digit >= 100 && digit <= 999)
+        {
+            int a = (digit / 100) % 10;
+            int b = (digit / 10) % 10;
+            int c = digit % 10;
+            cout << c << b << a ;
+        }
+        else if (digit >= 10 && digit <= 99)
+        {
+            int a = (digit / 10) % 10;
+            int b = digit % 10;
+            cout << b << a ;
+        }
+        else if (digit >= 1 && digit <= 9)
+        {
+            cout << "You enter one digit"<<endl;
+        }
+        else
+        {
+            cout << "You enter incorrect digit" << endl;
+        }
+    }
+}
